@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+    <title>SmartHome — Panel de Control</title>
+    <meta name="description"
+        content="Panel de control visual para hogar inteligente. Monitorea temperatura, luces, consumo energético y cámaras desde un único lugar." />
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <input type="checkbox" id="cambio-tema" class="casilla-tema" aria-label="Cambiar entre modo día y noche">
+
+    <header class="cabecera-sitio">
+
+
+        <div class="marca-cabecera">
+
+            <span class="icono-marca" aria-hidden="true">🏠</span>
+            <span class="nombre-marca">SmartHome</span>
+        </div>
+
+
+        <div class="estado-cabecera">
+            <label for="cambio-tema" class="boton-tema" title="Cambiar modo día/noche"
+                aria-label="Cambiar entre modo día y noche">
+                <span class="icono-tema icono-tema--noche" aria-hidden="true">🌙</span>
+                <span class="icono-tema icono-tema--dia" aria-hidden="true">☀️</span>
+            </label>
+
+
+            <div class="hora-cabecera">
+                <span class="etiqueta-hora">Miércoles, 18 Mar</span>
+                <span class="valor-hora">23:07</span>
+            </div>
+
+
+            <div class="insignia-estado estado-conectado" title="Conectado">
+                <span class="punto-insignia"></span>
+                <span class="texto-insignia">En línea</span>
+            </div>
+
+
+            <div class="avatar-cabecera" role="img" aria-label="Perfil de usuario">
+                <span class="iniciales-avatar">RH</span>
+            </div>
+        </div>
+    </header>
+
+
+
+
+    <main class="contenido-principal">
+
+
+        <section class="intro-panel" aria-labelledby="titulo-panel">
+            <div class="texto-intro">
+                <h1 id="titulo-panel" class="titulo-intro">Bienvenido, Martin 👋</h1>
+                <p class="subtitulo-intro">Tu hogar está funcionando con normalidad. Todo bajo control.</p>
+            </div>
+
+            <div class="chips-intro" aria-label="Resumen rápido del sistema">
+                <span class="chip chip-ok">
+                    <span class="icono-chip" aria-hidden="true">✓</span> Sistema OK
+                </span>
+                <span class="chip chip-aviso">
+                    <span class="icono-chip" aria-hidden="true">⚡</span> Ahorro activo
+                </span>
+                <span class="chip chip-info">
+                    <span class="icono-chip" aria-hidden="true">🎥</span> 4 cámaras activas
+                </span>
+            </div>
+        </section>
+
+
+
+
+
+        <section class="cuadricula-widgets" aria-label="Widgets del hogar inteligente">
+
+
+
+
+            <article class="tarjeta tarjeta-temperatura" aria-labelledby="titulo-temperatura">
+
+
+                <header class="cabecera-tarjeta">
+                    <h2 id="titulo-temperatura" class="titulo-tarjeta">Temperatura</h2>
+
+                    <span class="icono-tarjeta icono-tarjeta--temp" aria-hidden="true">🌡️</span>
+                </header>
+
+
+                <div class="cuerpo-tarjeta">
+
+                    <div class="display-temperatura">
+                        <span class="valor-temperatura" aria-label="22 grados centígrados">22</span>
+                        <span class="unidad-temperatura">°C</span>
+                    </div>
+
+
+                    <div class="contenedor-barra-temp" role="progressbar" aria-valuenow="22" aria-valuemin="0"
+                        aria-valuemax="40" aria-label="Nivel de temperatura">
+                        <div class="relleno-barra-temp"></div>
+                    </div>
+
+
+                    <div class="estadisticas-temp">
+                        <div class="estadistica-temp">
+                            <span class="etiqueta-estadistica">Mínima</span>
+                            <span class="valor-estadistica">17°C</span>
+                        </div>
+                        <div class="estadistica-temp">
+                            <span class="etiqueta-estadistica">Máxima</span>
+                            <span class="valor-estadistica">25°C</span>
+                        </div>
+                        <div class="estadistica-temp">
+                            <span class="etiqueta-estadistica">Humedad</span>
+                            <span class="valor-estadistica">58%</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <footer class="pie-tarjeta">
+                    <span class="texto-pie">Actualizado hace 2 min</span>
+                    <button class="boton-accion" type="button" aria-label="Ver detalle de temperatura">Detalle</button>
+                </footer>
+            </article>
+
+
+
+
+            <article class="tarjeta tarjeta-luces" aria-labelledby="titulo-luces">
+
+                <header class="cabecera-tarjeta">
+                    <h2 id="titulo-luces" class="titulo-tarjeta">Luces</h2>
+                    <span class="icono-tarjeta icono-tarjeta--luces" aria-hidden="true">💡</span>
+                </header>
+
+                <div class="cuerpo-tarjeta">
+
+
+                    <div class="resumen-luces">
+                        <span class="contador-luces-encendidas">5</span>
+                        <span class="etiqueta-contador-luces">de 8 encendidas</span>
+                    </div>
+
+
+                    <ul class="lista-luces" aria-label="Estado de luces por habitación">
+
+                        <li class="elemento-luz luz-encendida">
+
+                            <span class="indicador-luz" aria-hidden="true"></span>
+                            <span class="habitacion">Salón</span>
+                            <span class="estado-luz">Encendida</span>
+
+                            <span class="intensidad-luz" style="--intensidad: 80%;" aria-label="Intensidad 80%"></span>
+                        </li>
+
+                        <li class="elemento-luz luz-apagada">
+                            <span class="indicador-luz" aria-hidden="true"></span>
+                            <span class="habitacion">Dormitorio</span>
+                            <span class="estado-luz">Apagada</span>
+                            <span class="intensidad-luz" style="--intensidad: 0%;" aria-label="Intensidad 0%"></span>
+                        </li>
+
+                        <li class="elemento-luz luz-encendida">
+                            <span class="indicador-luz" aria-hidden="true"></span>
+                            <span class="habitacion">Cocina</span>
+                            <span class="estado-luz">Encendida</span>
+                            <span class="intensidad-luz" style="--intensidad: 60%;" aria-label="Intensidad 60%"></span>
+                        </li>
+
+                        <li class="elemento-luz luz-encendida">
+                            <span class="indicador-luz" aria-hidden="true"></span>
+                            <span class="habitacion">Baño</span>
+                            <span class="estado-luz">Encendida</span>
+                            <span class="intensidad-luz" style="--intensidad: 100%;"
+                                aria-label="Intensidad 100%"></span>
+                        </li>
+
+                        <li class="elemento-luz luz-apagada">
+                            <span class="indicador-luz" aria-hidden="true"></span>
+                            <span class="habitacion">Garaje</span>
+                            <span class="estado-luz">Apagada</span>
+                            <span class="intensidad-luz" style="--intensidad: 0%;" aria-label="Intensidad 0%"></span>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <footer class="pie-tarjeta">
+                    <span class="texto-pie">5 zonas activas</span>
+                    <button class="boton-accion" type="button" aria-label="Gestionar luces">Gestionar</button>
+                </footer>
+            </article>
+
+
+
+
+            <article class="tarjeta tarjeta-energia" aria-labelledby="titulo-energia">
+
+                <header class="cabecera-tarjeta">
+                    <h2 id="titulo-energia" class="titulo-tarjeta">Consumo Energético</h2>
+                    <span class="icono-tarjeta icono-tarjeta--energia" aria-hidden="true">⚡</span>
+                </header>
+
+                <div class="cuerpo-tarjeta">
+
+
+                    <div class="display-energia">
+                        <span class="valor-energia" aria-label="2.4 kilovatios hora">2.4</span>
+                        <span class="unidad-energia">kWh</span>
+                    </div>
+
+
+                    <div class="insignia-energia insignia-energia--ahorro">
+                        <span aria-hidden="true">🌿</span> Modo ahorro activo
+                    </div>
+
+
+
+                    <div class="grafico-energia" role="img" aria-label="Gráfico de consumo por hora">
+
+                        <div class="barra-grafico" style="--altura-barra: 40%;" aria-label="00h: bajo"></div>
+                        <div class="barra-grafico" style="--altura-barra: 25%;" aria-label="02h: muy bajo"></div>
+                        <div class="barra-grafico" style="--altura-barra: 20%;" aria-label="04h: muy bajo"></div>
+                        <div class="barra-grafico" style="--altura-barra: 30%;" aria-label="06h: bajo"></div>
+                        <div class="barra-grafico" style="--altura-barra: 65%;" aria-label="08h: medio"></div>
+                        <div class="barra-grafico" style="--altura-barra: 80%;" aria-label="10h: alto"></div>
+                        <div class="barra-grafico" style="--altura-barra: 90%;" aria-label="12h: muy alto"></div>
+                        <div class="barra-grafico" style="--altura-barra: 75%;" aria-label="14h: alto"></div>
+                        <div class="barra-grafico" style="--altura-barra: 70%;" aria-label="16h: alto"></div>
+                        <div class="barra-grafico barra-grafico--activa" style="--altura-barra: 55%;" aria-label="18h: actual - medio">
+                        </div>
+                        <div class="barra-grafico" style="--altura-barra: 40%;" aria-label="20h: bajo"></div>
+                        <div class="barra-grafico" style="--altura-barra: 35%;" aria-label="22h: bajo"></div>
+                    </div>
+
+                    <div class="etiquetas-grafico" aria-hidden="true">
+                        <span>0h</span>
+                        <span>6h</span>
+                        <span>12h</span>
+                        <span>18h</span>
+                        <span>24h</span>
+                    </div>
+
+
+                    <div class="estadisticas-energia">
+                        <div class="estadistica-energia">
+                            <span class="etiqueta-estadistica">Hoy</span>
+                            <span class="valor-estadistica">18.6 kWh</span>
+                        </div>
+                        <div class="estadistica-energia">
+                            <span class="etiqueta-estadistica">Este mes</span>
+                            <span class="valor-estadistica">342 kWh</span>
+                        </div>
+                    </div>
+                </div>
+
+                <footer class="pie-tarjeta">
+                    <span class="texto-pie">↓ 12% vs ayer</span>
+                    <button class="boton-accion" type="button" aria-label="Ver historial de consumo">Historial</button>
+                </footer>
+            </article>
+
+
+
+
+            <article class="tarjeta tarjeta-camaras" aria-labelledby="titulo-camaras">
+
+                <header class="cabecera-tarjeta">
+                    <h2 id="titulo-camaras" class="titulo-tarjeta">Cámaras</h2>
+                    <span class="icono-tarjeta icono-tarjeta--camara" aria-hidden="true">📷</span>
+                </header>
+
+                <div class="cuerpo-tarjeta">
+
+
+                    <div class="cuadricula-camaras" aria-label="Vista de 4 cámaras de seguridad">
+
+
+                        <div class="vista-camara vista-camara--activa">
+                            <div class="marcador-camara" aria-label="Cámara de entrada">
+
+                                <div class="lineas-camara" aria-hidden="true"></div>
+                                <div class="info-camara">
+                                    <span class="insignia-camara insignia-camara--envivo">● LIVE</span>
+                                </div>
+                                <div class="pie-camara">
+                                    <span class="nombre-camara">Entrada</span>
+                                    <span class="hora-camara">23:07</span>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="vista-camara vista-camara--activa">
+                            <div class="marcador-camara" aria-label="Cámara de jardín">
+                                <div class="lineas-camara" aria-hidden="true"></div>
+                                <div class="info-camara">
+                                    <span class="insignia-camara insignia-camara--envivo">● LIVE</span>
+                                </div>
+                                <div class="pie-camara">
+                                    <span class="nombre-camara">Jardín</span>
+                                    <span class="hora-camara">23:07</span>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="vista-camara vista-camara--activa">
+                            <div class="marcador-camara" aria-label="Cámara de garaje">
+                                <div class="lineas-camara" aria-hidden="true"></div>
+                                <div class="info-camara">
+                                    <span class="insignia-camara insignia-camara--envivo">● LIVE</span>
+                                </div>
+                                <div class="pie-camara">
+                                    <span class="nombre-camara">Garaje</span>
+                                    <span class="hora-camara">23:07</span>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="vista-camara vista-camara--desconectada">
+                            <div class="marcador-camara" aria-label="Cámara de patio trasero - sin señal">
+                                <div class="mensaje-sin-senal" aria-label="Sin señal">
+                                    <span class="icono-camara" aria-hidden="true">📷</span>
+                                    <span>Sin señal</span>
+                                </div>
+                                <div class="pie-camara">
+                                    <span class="nombre-camara">Patio</span>
+                                    <span class="insignia-camara insignia-camara--desconectada">OFFLINE</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <footer class="pie-tarjeta">
+                    <span class="texto-pie">3 activas · 1 offline</span>
+                    <button class="boton-accion" type="button" aria-label="Ver cámaras en pantalla completa">Ver
+                        todo</button>
+                </footer>
+            </article>
+
+
+
+
+            <article class="tarjeta tarjeta-seguridad" aria-labelledby="titulo-seguridad">
+
+                <header class="cabecera-tarjeta">
+                    <h2 id="titulo-seguridad" class="titulo-tarjeta">Seguridad</h2>
+                    <span class="icono-tarjeta icono-tarjeta--seguridad" aria-hidden="true">🔒</span>
+                </header>
+
+                <div class="cuerpo-tarjeta">
+
+
+                    <div class="estado-seguridad estado-seguridad--armado">
+                        <span class="icono-seguridad" aria-hidden="true">🛡️</span>
+                        <div class="info-seguridad">
+                            <span class="etiqueta-seguridad">Sistema armado</span>
+                            <span class="subtitulo-seguridad">Modo noche · Perimetral activo</span>
+                        </div>
+                    </div>
+
+
+                    <ul class="lista-seguridad" aria-label="Puntos de control">
+                        <li class="elemento-seguridad seguridad-ok">
+                            <span class="punto-seguridad" aria-hidden="true"></span>
+                            <span>Puerta principal</span>
+                            <span class="estado-punto-seguridad">Cerrada</span>
+                        </li>
+                        <li class="elemento-seguridad seguridad-ok">
+                            <span class="punto-seguridad" aria-hidden="true"></span>
+                            <span>Ventanas (x5)</span>
+                            <span class="estado-punto-seguridad">Cerradas</span>
+                        </li>
+                        <li class="elemento-seguridad seguridad-ok">
+                            <span class="punto-seguridad" aria-hidden="true"></span>
+                            <span>Garaje</span>
+                            <span class="estado-punto-seguridad">Cerrado</span>
+                        </li>
+                        <li class="elemento-seguridad seguridad-aviso">
+                            <span class="punto-seguridad" aria-hidden="true"></span>
+                            <span>Puerta trasera</span>
+                            <span class="estado-punto-seguridad">Revisar</span>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <footer class="pie-tarjeta">
+                    <span class="texto-pie">Sin alertas recientes</span>
+                    <button class="boton-accion" type="button"
+                        aria-label="Ver configuración de seguridad">Configurar</button>
+                </footer>
+            </article>
+
+
+
+
+            <article class="tarjeta tarjeta-clima" aria-labelledby="titulo-clima">
+
+                <header class="cabecera-tarjeta">
+                    <h2 id="titulo-clima" class="titulo-tarjeta">Clima Exterior</h2>
+                    <span class="icono-tarjeta icono-tarjeta--clima" aria-hidden="true">🌤️</span>
+                </header>
+
+                <div class="cuerpo-tarjeta">
+
+
+                    <div class="principal-clima">
+                        <span class="icono-clima" aria-hidden="true">🌙</span>
+                        <div class="grupo-temp-clima">
+                            <span class="grados-clima" aria-label="14 grados centígrados exterior">14°C</span>
+                            <span class="descripcion-clima">Despejado · Noche</span>
+                        </div>
+                    </div>
+
+
+                    <div class="detalles-clima">
+                        <div class="dato-clima">
+                            <span class="icono-dato-clima" aria-hidden="true">💨</span>
+                            <span class="etiqueta-dato-clima">Viento</span>
+                            <span class="valor-dato-clima">12 km/h</span>
+                        </div>
+                        <div class="dato-clima">
+                            <span class="icono-dato-clima" aria-hidden="true">💧</span>
+                            <span class="etiqueta-dato-clima">Humedad</span>
+                            <span class="valor-dato-clima">72%</span>
+                        </div>
+                        <div class="dato-clima">
+                            <span class="icono-dato-clima" aria-hidden="true">👁️</span>
+                            <span class="etiqueta-dato-clima">Visib.</span>
+                            <span class="valor-dato-clima">10 km</span>
+                        </div>
+                    </div>
+
+
+                    <div class="prevision-clima" aria-label="Previsión próximos días">
+                        <div class="dia-prevision">
+                            <span class="nombre-dia">Jue</span>
+                            <span class="icono-dia" aria-hidden="true">⛅</span>
+                            <span class="temperatura-dia">16°</span>
+                        </div>
+                        <div class="dia-prevision">
+                            <span class="nombre-dia">Vie</span>
+                            <span class="icono-dia" aria-hidden="true">🌦️</span>
+                            <span class="temperatura-dia">13°</span>
+                        </div>
+                        <div class="dia-prevision">
+                            <span class="nombre-dia">Sáb</span>
+                            <span class="icono-dia" aria-hidden="true">☀️</span>
+                            <span class="temperatura-dia">19°</span>
+                        </div>
+                        <div class="dia-prevision">
+                            <span class="nombre-dia">Dom</span>
+                            <span class="icono-dia" aria-hidden="true">☀️</span>
+                            <span class="temperatura-dia">21°</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <footer class="pie-tarjeta">
+                    <span class="texto-pie">Madrid, España</span>
+                    <button class="boton-accion" type="button" aria-label="Ver previsión extendida">Previsión</button>
+                </footer>
+            </article>
+
+        </section>
+
+
+
+
+        <section class="acciones-rapidas" aria-labelledby="titulo-acciones">
+            <h2 id="titulo-acciones" class="titulo-seccion">Acciones Rápidas</h2>
+
+            <div class="cuadricula-acciones">
+
+                <button class="boton-rapido" type="button" aria-label="Apagar todas las luces">
+                    <span class="icono-boton" aria-hidden="true">💡</span>
+                    <span class="etiqueta-boton">Apagar luces</span>
+                </button>
+
+                <button class="boton-rapido" type="button" aria-label="Activar modo vacaciones">
+                    <span class="icono-boton" aria-hidden="true">✈️</span>
+                    <span class="etiqueta-boton">Modo vacaciones</span>
+                </button>
+
+                <button class="boton-rapido" type="button" aria-label="Ajustar termostato">
+                    <span class="icono-boton" aria-hidden="true">🌡️</span>
+                    <span class="etiqueta-boton">Termostato</span>
+                </button>
+
+                <button class="boton-rapido" type="button" aria-label="Activar modo cine">
+                    <span class="icono-boton" aria-hidden="true">🎬</span>
+                    <span class="etiqueta-boton">Modo cine</span>
+                </button>
+
+                <button class="boton-rapido" type="button" aria-label="Bloquear puertas">
+                    <span class="icono-boton" aria-hidden="true">🔒</span>
+                    <span class="etiqueta-boton">Bloquear todo</span>
+                </button>
+
+                <button class="boton-rapido" type="button" aria-label="Activar alarma">
+                    <span class="icono-boton" aria-hidden="true">🚨</span>
+                    <span class="etiqueta-boton">Alarma</span>
+                </button>
+
+            </div>
+        </section>
+
+    </main>
+
+
+
+
+    <footer class="pie-sitio" role="contentinfo">
+        <p class="texto-copyright">
+            SmartHome Dashboard · Versión 2.4.1 ·
+            <span class="punto-estado-pie" aria-hidden="true"></span>
+            Todos los sistemas operativos
+        </p>
+    </footer>
+
+</body>
+
+</html>
