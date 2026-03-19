@@ -1,8 +1,4 @@
-:root {
-
-
-    --color-blue-100: #dbeafe;
-    --color-blue-300: #93c5fd;
+﻿:root {
     --color-blue-400: #60a5fa;
     --color-blue-500: #3b82f6;
     --color-blue-600: #2563eb;
@@ -12,17 +8,11 @@
     --color-indigo-500: #6366f1;
     --color-indigo-600: #4f46e5;
     --color-violet-500: #8b5cf6;
-
-
-    --color-yellow-300: #fde047;
     --color-yellow-400: #facc15;
     --color-amber-400: #fbbf24;
     --color-amber-500: #f59e0b;
     --color-orange-400: #fb923c;
     --color-orange-500: #f97316;
-
-
-    --color-green-300: #86efac;
     --color-green-400: #4ade80;
     --color-green-500: #22c55e;
     --color-teal-400: #2dd4bf;
@@ -34,7 +24,6 @@
 
 
     --color-gray-900: #0f172a;
-    --color-gray-850: #111827;
     --color-gray-800: #1e293b;
     --color-gray-750: #1f2937;
     --color-gray-700: #334155;
@@ -49,12 +38,6 @@
     --color-slate-50: #f8fafc;
     --color-slate-100: #f1f5f9;
     --color-slate-200: #e2e8f0;
-    --color-slate-300: #cbd5e1;
-
-
-    --glass-light: rgba(255, 255, 255, 0.08);
-    --glass-border-light: rgba(255, 255, 255, 0.15);
-    --glass-dark: rgba(0, 0, 0, 0.25);
 
 
     --shadow-sm: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.12);
@@ -157,7 +140,7 @@ body {
     --qa-bg-hover: var(--color-gray-700);
 }
 
-body:has(#cambio-tema:checked) {
+#cambio-tema:checked ~ * {
 
 
     --bg-page: var(--color-slate-100);
@@ -217,6 +200,8 @@ body:has(#cambio-tema:checked) {
 
     --qa-bg: var(--color-white);
     --qa-bg-hover: var(--color-slate-100);
+    
+    color: var(--text-primary);
 }
 
 *,
@@ -275,12 +260,12 @@ body:has(#cambio-tema:checked) {
     transform: rotate(-90deg) scale(0.5);
 }
 
-body:has(#cambio-tema:checked) .icono-tema--noche {
+#cambio-tema:checked ~ .cabecera-sitio .icono-tema--noche {
     opacity: 0;
     transform: rotate(90deg) scale(0.5);
 }
 
-body:has(#cambio-tema:checked) .icono-tema--dia {
+#cambio-tema:checked ~ .cabecera-sitio .icono-tema--dia {
     opacity: 1;
     transform: rotate(0deg) scale(1);
 }
@@ -295,21 +280,24 @@ body {
     font-size: var(--font-base);
     font-weight: var(--font-w-normal);
     color: var(--text-primary);
-    background-color: var(--bg-page);
+    /* background on .superficie-fondo */
 
 
-    transition:
-        background-color var(--transition-slow),
-        color var(--transition-slow);
+    transition: color var(--transition-slow);
 
     line-height: 1.6;
     min-height: 100vh;
+}
 
-
+.superficie-fondo {
+    position: fixed;
+    inset: 0;
+    z-index: -100;
+    background-color: var(--bg-page);
     background-image:
         radial-gradient(ellipse at top left, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
         radial-gradient(ellipse at bottom right, rgba(139, 92, 246, 0.06) 0%, transparent 50%);
-    background-attachment: fixed;
+    transition: background-color var(--transition-slow);
 }
 
 ul,
