@@ -281,7 +281,6 @@ body {
     font-size: var(--font-base);
     font-weight: var(--font-w-normal);
     color: var(--text-primary);
-    /* background on .superficie-fondo */
 
 
     transition: color var(--transition-slow);
